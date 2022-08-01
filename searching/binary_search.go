@@ -20,7 +20,6 @@ func binarySearch(datalist []int, key int) bool {
 		return false
 	}
 	return true
-
 }
 
 func main() {

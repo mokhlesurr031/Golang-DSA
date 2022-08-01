@@ -10,7 +10,6 @@ func linearearch(datalist []int, key int) bool {
 
 	}
 	return false
-
 }
 
 func main() {
