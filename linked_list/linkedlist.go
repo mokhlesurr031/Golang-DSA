@@ -10,6 +10,10 @@ type Node struct {
 	next  *Node
 }
 
+func (n Node) String() string {
+	return fmt.Sprintf("%d", n.value)
+}
+
 type linkedList struct {
 	head *Node
 	len  int
@@ -30,9 +34,14 @@ func (l *linkedList) add(value int) {
 	}
 }
 func (l *linkedList) remove(value int) {
-	//return nil
+
 }
 func (l linkedList) get(value int) *Node {
+	for iterator := l.head; iterator != nil; iterator = iterator.next {
+		if iterator.value == value {
+			return iterator
+		}
+	}
 	return nil
 }
 
@@ -54,4 +63,8 @@ func main() {
 	l.add(2)
 	l.add(3)
 	fmt.Println(l)
+	l.add(4)
+	fmt.Println(l)
+	fmt.Println(l.get(2))
+	fmt.Println(l.get(10))
 }
