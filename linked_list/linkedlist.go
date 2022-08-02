@@ -33,6 +33,7 @@ func (l *linkedList) add(value int) {
 		iterator.next = newNode
 	}
 }
+
 func (l *linkedList) remove(value int) {
 	var previous *Node
 
@@ -44,12 +45,11 @@ func (l *linkedList) remove(value int) {
 				previous.next = current.next
 				return
 			}
-
 		}
 		previous = current
 	}
-
 }
+
 func (l linkedList) get(value int) *Node {
 	for iterator := l.head; iterator != nil; iterator = iterator.next {
 		if iterator.value == value {
@@ -67,7 +67,6 @@ func (l linkedList) String() string {
 		sb.WriteString(fmt.Sprintf("%d ", iterator.value))
 	}
 	return sb.String()
-
 }
 
 func main() {
